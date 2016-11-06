@@ -11,6 +11,7 @@
     "test:integration": "mocha --recursive test/integration"
   },
   "dependencies": {
+    "async": "^2.1.2",
     "body-parser": "^1.13.3",
     "cheerio": "^0.22.0",
     "compression": "^1.5.2",
