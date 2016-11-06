@@ -123,13 +123,17 @@ router.get('/scraper', function (req, res) {
                 }
               }
             });
-            async.parallel(arr, callback);
+            if (arr.length) {
+              async.parallel(arr, callback);
+            } else {
+              callback();
+            }
           }
         });
       } else {
         callback();
       }
-    };
+    }
 
     callback();
     getData("https://www.medium.com", function () {
