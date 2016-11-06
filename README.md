@@ -13,8 +13,9 @@ It find all the links that point to medium.com only, not that link to other webs
 ## API Reference
 
 Currently there are two API endpoints:
-1) ``` {{url}}/scraper ```
-2) ``` {{url}}/asyncScraper ```
+
+1) ``` localhost:3000/scraper ```
+2) ``` localhost:3000/asyncScraper ```
 
 
 ## License

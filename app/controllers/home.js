@@ -118,9 +118,13 @@ router.get('/scraper', function (req, res) {
                       getData(tempLink, cb)
                     });
                   }
+                } else {
+                  callback();
                 }
               });
               async.parallel(arr, callback);
+            } else {
+              callback();
             }
           }
         );
