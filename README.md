@@ -7,7 +7,9 @@ It find all the links that point to medium.com only, not that link to other webs
 ## Installation
 
 1) Clone the repository
+
 2) Run ``` npm install ```
+
 3) After installation is complete, start the server with ``` npm start ```
 
 ## API Reference
@@ -15,6 +17,7 @@ It find all the links that point to medium.com only, not that link to other webs
 Currently there are two API endpoints:
 
 1) ``` localhost:3000/scraper ```
+
 2) ``` localhost:3000/asyncScraper ```
 
 
