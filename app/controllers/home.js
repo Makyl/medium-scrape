@@ -8,9 +8,8 @@ var request = require('request'),
 
 requestThrottler.config(5, 1000);
 
-
 module.exports = {
-  syncScraper: function (req, res) {
+  syncScraper: function () {
     //Initializing write stream
     writer.pipe(fs.createWriteStream('links.csv'));
 
@@ -27,19 +26,17 @@ module.exports = {
     function getData(link, callback) {
       //Checking if page not already visited and is a proper link and is of medium.com
       if (hashMap[link] == undefined && learnRegExp(link) && link.indexOf("medium.com") !== -1) {
-        //console.log(link);
         //Storing that page has been visited
         hashMap[link] = 1;
         //Writing it on csv
         writer.write({link: link});
-        //console.log(link);
+        console.log(link);
         //getting links for this current link
         requestThrottler({method: 'GET', uri: link}, function (err, response, body) {
             if (body) {
-              console.log("Received")
+              console.log("Received");
               var $ = cheerio.load(body);
               var links = $('a');
-              var arr = [];
               $(links).each(function (i, link) {
                 var tempLink = $(link).attr('href');
                 if (tempLink) {
@@ -67,7 +64,7 @@ module.exports = {
       console.log("-------------------")
     });
   },
-  asyncScraper: function (req, res) {
+  asyncScraper: function () {
     //Initializing write stream
     writer.pipe(fs.createWriteStream('asyncLinks.csv'));
 
@@ -124,4 +121,4 @@ module.exports = {
       console.log("Finished");
     });
   }
-}
+};

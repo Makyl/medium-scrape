@@ -10,15 +10,15 @@ It find all the links that point to medium.com only, not that link to other webs
 
 2) Run ``` npm install ```
 
-3) After installation is complete, run the following functions
+3) After installation is complete, run the following commands
 
 ## API Reference
 
 Currently there are two functions which can be run by these commands:
 
-1) ``` node -e "require('./app').syncScraper()" ```
+1) ``` npm run startWithoutAsync ```
 
-2) ``` node -e "require('./app').asyncScraper()" ```
+2) ``` npm run startWithAsync ```
 
 
 ## License

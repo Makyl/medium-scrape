@@ -4,14 +4,14 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "startSync": "node -e 'app.syncScraper()'",
-    "startAsync": "node -e 'require('./app').asyncScraper()'"
+    "startWithoutAsync": "node -e require('./app').syncScraper()",
+    "startWithAsync": "node -e require('./app').asyncScraper() "
   },
   "dependencies": {
     "async": "^2.1.2",
     "cheerio": "^0.22.0",
     "csv-write-stream": "^2.0.0",
     "fs": "0.0.1-security",
-    "request": "^2.78.0",
+    "request": "^2.78.0"
   }
 }
